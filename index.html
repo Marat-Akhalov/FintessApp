@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness App</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons8-running-32.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script defer src="/script.js"></script>
+  </head>
+  <body class="page overlay">
+    <div class="container">
+      <div class="workout flex">
+        <div class="workout__panel">
+          <ul class="workout__list list-reset">
+            <form class="workout__form form form--hidden" action="/">
+              <div class="form__row">
+                <label class="form__label">Type</label>
+                <select class="form__input form__input--type">
+                  <option value="running">Running</option>
+                  <option value="cycling">Cycling</option>
+                </select>
+              </div>
+              <div class="form__row">
+                <label class="form__label">Distance</label>
+                <input class="form__input form__input--distance" placeholder="km" />
+              </div>
+              <div class="form__row">
+                <label class="form__label">Duration</label>
+                <input class="form__input form__input--duration" placeholder="min" />
+              </div>
+              <div class="form__row">
+                <label class="form__label">Temp</label>
+                <input class="form__input form__input--temp" placeholder="step/min" />
+              </div>
+              <div class="form__row form__row--hidden">
+                <label class="form__label">Climb</label>
+                <input class="form__input form__input--climb" placeholder="meters" />
+              </div>
+              <button class="form__btn btn-reset">Save</button>
+            </form>
+          </ul>
+        </div>
+        <div class="workout__map" id="map"></div>
+      </div>
+      <div class="workout__modal modal">
+        <div class="modal__content-wrapper">
+          <button class="modal__close btn-reset">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+              <path
+                d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"
+              />
+            </svg>
+          </button>
+          <p class="modal__descr">
+            Couldn&rsquo;t get your location data. Please allow the app to&nbsp;access your location so&nbsp;that
+            it&nbsp;can work correctly.
+          </p>
+          <button class="modal__btn btn-reset">Refresh</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
